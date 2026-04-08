@@ -1,6 +1,7 @@
 const express=require('express');
 const cors=require('cors');
 const dotenv=require('dotenv');
+const connectDB =require('./src/config/db');
 
 
 
@@ -11,6 +12,8 @@ const app=express();
 
 
 app.use(express.json());
+connectDB();
+
 
 app.get('/',(req,res)=>{
   res.send('fintech server is on');
